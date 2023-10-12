@@ -45,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [python-go]
+        language: [python]
     # Specify the container in which actions will run
     container:
       image: mcr.microsoft.com/cstsectools/codeql-container
