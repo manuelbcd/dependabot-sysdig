@@ -9,19 +9,21 @@ on:
   schedule:
     - cron: '15 5 * * 3'
 
+env:
+  GITHUB_REGISTRY: ghcr.io
+  GITHUB_REPOSITORY: ${{ github.repository }}
+
 jobs:
-  analyze:
+  build-and-analyze:
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
       security-events: write
       actions: read
-
     strategy:
       fail-fast: false
       matrix:
-        language: [java-kotlin]
-
+        language: [python-go]
     # Specify the container in which actions will run
     container:
       image: codeql-container:f0f91db
@@ -29,13 +31,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Log in to the Container registry 📦
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.GITHUB_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image 🐳
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: |
+            ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
-      - name: Build
-        run: |
-          ./configure
-          make
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
