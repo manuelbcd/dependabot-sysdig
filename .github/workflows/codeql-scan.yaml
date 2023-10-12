@@ -38,10 +38,11 @@ jobs:
             ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
 
   scan-and-sbom:
-    name: Build
+    name: SBOM scan
     runs-on: ubuntu-latest
     steps:
       - name: SBOM
         uses: anchore/sbom-action@v0
         with:
           image: ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
+          dependency-snapshot: true
