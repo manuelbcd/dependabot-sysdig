@@ -1,0 +1,99 @@
+{
+    "namespace": "security-playground",
+    "workloadKind": "deployment",
+    "workloadName": "security-playground",
+    "container": "security-playground",
+    "imageID": "sha256:9b8e96e280960683f84f7c977bc817c166efa1a9a98466057d96bd222fdf32df",
+    "packages": [
+        {
+            "purl": "pkg:deb/debian/base-files@10.3+deb10u13?distro=debian-10.13",
+            "name": "base-files",
+            "version": "10.3+deb10u13",
+            "installedViaPackageManager": true,
+            "srcName": "base-files",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/libbz2-1.0@1.0.6-9.2~deb10u2?distro=debian-10.13",
+            "name": "libbz2-1.0",
+            "version": "1.0.6-9.2~deb10u2",
+            "installedViaPackageManager": true,
+            "srcName": "bzip2",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/libc-bin@2.28-10+deb10u2?distro=debian-10.13",
+            "name": "libc-bin",
+            "version": "2.28-10+deb10u2",
+            "installedViaPackageManager": true,
+            "srcName": "glibc",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/libc6@2.28-10+deb10u2?distro=debian-10.13",
+            "name": "libc6",
+            "version": "2.28-10+deb10u2",
+            "installedViaPackageManager": true,
+            "srcName": "glibc",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/libexpat1@2.2.6-2+deb10u6?distro=debian-10.13",
+            "name": "libexpat1",
+            "version": "2.2.6-2+deb10u6",
+            "installedViaPackageManager": true,
+            "srcName": "expat",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/liblzma5@5.2.4-1+deb10u1?distro=debian-10.13",
+            "name": "liblzma5",
+            "version": "5.2.4-1+deb10u1",
+            "installedViaPackageManager": true,
+            "srcName": "xz-utils",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/libssl1.1@1.1.1n-0+deb10u5?distro=debian-10.13",
+            "name": "libssl1.1",
+            "version": "1.1.1n-0+deb10u5",
+            "installedViaPackageManager": true,
+            "srcName": "openssl",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/libuuid1@2.33.1-0.1?distro=debian-10.13",
+            "name": "libuuid1",
+            "version": "2.33.1-0.1",
+            "installedViaPackageManager": true,
+            "srcName": "util-linux",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:deb/debian/zlib1g@1:1.2.11.dfsg-1+deb10u2?distro=debian-10.13",
+            "name": "zlib1g",
+            "version": "1:1.2.11.dfsg-1+deb10u2",
+            "installedViaPackageManager": true,
+            "srcName": "zlib",
+            "osFamily": "debian",
+            "osVersion": "10.13",
+            "arch": ""
+        }
+    ]
+},
