@@ -16,6 +16,22 @@ env:
   GITHUB_REPOSITORY: ${{ github.repository }}
 
 jobs:
+
+  analyze:
+    name: Dependabot scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Security Report
+        uses: peter-murray/github-security-report-action@v2
+        with:
+          token: ${{ secrets.SECURITY_TOKEN }}
+          outputDir: .
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: reports
+          path: ./*.json
+
   build-and-push:
     name: Build
     runs-on: ubuntu-latest
@@ -35,32 +51,3 @@ jobs:
           push: true
           tags: |
             ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
-
-  analyze:
-    name: Analyze
-    runs-on: ubuntu-latest
-    permissions:
-      security-events: write
-      actions: read
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [python]
-    # Specify the container in which actions will run
-    container:
-      image: mcr.microsoft.com/cstsectools/codeql-container
-      options: --user root
-  
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: ${{ matrix.language }}
-      - name: Build
-        run: |
-          ./configure
-          make
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
