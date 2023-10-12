@@ -1,10 +1,10 @@
 [
     {
-        "number": 4,
-        "created_at": "2023-10-12T15:33:17Z",
-        "updated_at": "2023-10-12T15:33:17Z",
-        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/4",
-        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/4",
+        "number": 1773,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1773",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1773",
         "state": "open",
         "fixed_at": null,
         "dismissed_by": null,
@@ -12,49 +12,95 @@
         "dismissed_reason": null,
         "dismissed_comment": null,
         "rule": {
-            "id": "py/reflective-xss",
-            "severity": "error",
-            "description": "Reflected server-side cross-site scripting",
-            "name": "py/reflective-xss",
-            "tags": [
-                "external/cwe/cwe-079",
-                "external/cwe/cwe-116",
-                "security"
-            ],
+            "id": "GHSA-xg9f-g7g7-2323-Werkzeug",
+            "severity": "warning",
+            "description": "GHSA-xg9f-g7g7-2323 high vulnerability for Werkzeug package",
+            "name": "PythonMatcherExactDirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/local/lib/python3.8/site-packages/Werkzeug-0.16.0.dist-info/METADATA reports Werkzeug at version 0.16.0  which is a vulnerable (python) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/local/lib/python3.8/site-packages/Werkzeug-0.16.0.dist-info/METADATA",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "library"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1773/instances"
+    },
+    {
+        "number": 1772,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1772",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1772",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "GHSA-r9hx-vwmv-q579-setuptools",
+            "severity": "warning",
+            "description": "GHSA-r9hx-vwmv-q579 high vulnerability for setuptools package",
+            "name": "PythonMatcherExactDirectMatch",
+            "tags": [],
             "security_severity_level": "medium"
         },
         "tool": {
-            "name": "CodeQL",
+            "name": "Grype",
             "guid": null,
-            "version": "2.15.0"
+            "version": "0.50.1"
         },
         "most_recent_instance": {
             "ref": "refs/heads/main",
-            "analysis_key": "dynamic/github-code-scanning/codeql:analyze",
-            "environment": "{\"language\":\"python\"}",
-            "category": "/language:python",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
             "state": "open",
-            "commit_sha": "1efa1e7fc123c722caf046d5299ccd575304d616",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
             "message": {
-                "text": "Cross-site scripting vulnerability due to a user-provided value."
+                "text": "The path /usr/local/lib/python3.8/site-packages/setuptools-57.5.0.dist-info/METADATA reports setuptools at version 57.5.0  which is a vulnerable (python) package installed in the container"
             },
             "location": {
-                "path": "security-playground/app.py",
-                "start_line": 21,
-                "end_line": 21,
-                "start_column": 12,
-                "end_column": 19
+                "path": "image//usr/local/lib/python3.8/site-packages/setuptools-57.5.0.dist-info/METADATA",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
             },
-            "classifications": []
+            "classifications": [
+                "library"
+            ]
         },
-        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/4/instances"
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1772/instances"
     },
     {
-        "number": 3,
-        "created_at": "2023-10-12T15:33:17Z",
-        "updated_at": "2023-10-12T15:33:17Z",
-        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/3",
-        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/3",
+        "number": 1771,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1771",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1771",
         "state": "open",
         "fixed_at": null,
         "dismissed_by": null,
@@ -62,150 +108,1329 @@
         "dismissed_reason": null,
         "dismissed_comment": null,
         "rule": {
-            "id": "py/path-injection",
-            "severity": "error",
-            "description": "Uncontrolled data used in path expression",
-            "name": "py/path-injection",
-            "tags": [
-                "correctness",
-                "external/cwe/cwe-022",
-                "external/cwe/cwe-023",
-                "external/cwe/cwe-036",
-                "external/cwe/cwe-073",
-                "external/cwe/cwe-099",
-                "security"
-            ],
-            "security_severity_level": "high"
-        },
-        "tool": {
-            "name": "CodeQL",
-            "guid": null,
-            "version": "2.15.0"
-        },
-        "most_recent_instance": {
-            "ref": "refs/heads/main",
-            "analysis_key": "dynamic/github-code-scanning/codeql:analyze",
-            "environment": "{\"language\":\"python\"}",
-            "category": "/language:python",
-            "state": "open",
-            "commit_sha": "1efa1e7fc123c722caf046d5299ccd575304d616",
-            "message": {
-                "text": "This path depends on a user-provided value."
-            },
-            "location": {
-                "path": "security-playground/app.py",
-                "start_line": 18,
-                "end_line": 18,
-                "start_column": 15,
-                "end_column": 34
-            },
-            "classifications": []
-        },
-        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/3/instances"
-    },
-    {
-        "number": 2,
-        "created_at": "2023-10-12T15:33:17Z",
-        "updated_at": "2023-10-12T15:33:17Z",
-        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/2",
-        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/2",
-        "state": "open",
-        "fixed_at": null,
-        "dismissed_by": null,
-        "dismissed_at": null,
-        "dismissed_reason": null,
-        "dismissed_comment": null,
-        "rule": {
-            "id": "py/path-injection",
-            "severity": "error",
-            "description": "Uncontrolled data used in path expression",
-            "name": "py/path-injection",
-            "tags": [
-                "correctness",
-                "external/cwe/cwe-022",
-                "external/cwe/cwe-023",
-                "external/cwe/cwe-036",
-                "external/cwe/cwe-073",
-                "external/cwe/cwe-099",
-                "security"
-            ],
-            "security_severity_level": "high"
-        },
-        "tool": {
-            "name": "CodeQL",
-            "guid": null,
-            "version": "2.15.0"
-        },
-        "most_recent_instance": {
-            "ref": "refs/heads/main",
-            "analysis_key": "dynamic/github-code-scanning/codeql:analyze",
-            "environment": "{\"language\":\"python\"}",
-            "category": "/language:python",
-            "state": "open",
-            "commit_sha": "1efa1e7fc123c722caf046d5299ccd575304d616",
-            "message": {
-                "text": "This path depends on a user-provided value."
-            },
-            "location": {
-                "path": "security-playground/app.py",
-                "start_line": 11,
-                "end_line": 11,
-                "start_column": 15,
-                "end_column": 33
-            },
-            "classifications": []
-        },
-        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/2/instances"
-    },
-    {
-        "number": 1,
-        "created_at": "2023-10-12T15:33:17Z",
-        "updated_at": "2023-10-12T15:33:17Z",
-        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1",
-        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1",
-        "state": "open",
-        "fixed_at": null,
-        "dismissed_by": null,
-        "dismissed_at": null,
-        "dismissed_reason": null,
-        "dismissed_comment": null,
-        "rule": {
-            "id": "py/command-line-injection",
-            "severity": "error",
-            "description": "Uncontrolled command line",
-            "name": "py/command-line-injection",
-            "tags": [
-                "correctness",
-                "external/cwe/cwe-078",
-                "external/cwe/cwe-088",
-                "security"
-            ],
+            "id": "GHSA-qc9x-gjcv-465w-pipenv",
+            "severity": "warning",
+            "description": "GHSA-qc9x-gjcv-465w high vulnerability for pipenv package",
+            "name": "PythonMatcherExactDirectMatch",
+            "tags": [],
             "security_severity_level": "critical"
         },
         "tool": {
-            "name": "CodeQL",
+            "name": "Grype",
             "guid": null,
-            "version": "2.15.0"
+            "version": "0.50.1"
         },
         "most_recent_instance": {
             "ref": "refs/heads/main",
-            "analysis_key": "dynamic/github-code-scanning/codeql:analyze",
-            "environment": "{\"language\":\"python\"}",
-            "category": "/language:python",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
             "state": "open",
-            "commit_sha": "1efa1e7fc123c722caf046d5299ccd575304d616",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
             "message": {
-                "text": "This command line depends on a user-provided value."
+                "text": "The path /usr/local/lib/python3.8/site-packages/pipenv-2018.11.26.dist-info/METADATA reports pipenv at version 2018.11.26  which is a vulnerable (python) package installed in the container"
             },
             "location": {
-                "path": "security-playground/app.py",
-                "start_line": 28,
-                "end_line": 28,
-                "start_column": 30,
-                "end_column": 37
+                "path": "image//usr/local/lib/python3.8/site-packages/pipenv-2018.11.26.dist-info/METADATA",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
             },
-            "classifications": []
+            "classifications": [
+                "library"
+            ]
         },
-        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1/instances"
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1771/instances"
+    },
+    {
+        "number": 1770,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1770",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1770",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "GHSA-px8h-6qxv-m22q-Werkzeug",
+            "severity": "warning",
+            "description": "GHSA-px8h-6qxv-m22q low vulnerability for Werkzeug package",
+            "name": "PythonMatcherExactDirectMatch",
+            "tags": [],
+            "security_severity_level": "low"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/local/lib/python3.8/site-packages/Werkzeug-0.16.0.dist-info/METADATA reports Werkzeug at version 0.16.0  which is a vulnerable (python) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/local/lib/python3.8/site-packages/Werkzeug-0.16.0.dist-info/METADATA",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "library"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1770/instances"
+    },
+    {
+        "number": 1769,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1769",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1769",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "GHSA-m2qf-hxjv-5gpq-Flask",
+            "severity": "warning",
+            "description": "GHSA-m2qf-hxjv-5gpq high vulnerability for Flask package",
+            "name": "PythonMatcherExactDirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/local/lib/python3.8/site-packages/Flask-1.1.1.dist-info/METADATA reports Flask at version 1.1.1  which is a vulnerable (python) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/local/lib/python3.8/site-packages/Flask-1.1.1.dist-info/METADATA",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "library"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1769/instances"
+    },
+    {
+        "number": 1768,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1768",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1768",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "GHSA-g3rq-g295-4j3m-Jinja2",
+            "severity": "warning",
+            "description": "GHSA-g3rq-g295-4j3m medium vulnerability for Jinja2 package",
+            "name": "PythonMatcherExactDirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/local/lib/python3.8/site-packages/Jinja2-2.10.3.dist-info/METADATA reports Jinja2 at version 2.10.3  which is a vulnerable (python) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/local/lib/python3.8/site-packages/Jinja2-2.10.3.dist-info/METADATA",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "library"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1768/instances"
+    },
+    {
+        "number": 1767,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1767",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1767",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4921-linux-libc-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4921 high vulnerability for linux-libc-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/linux-libc-dev/copyright reports linux-libc-dev at version 4.19.282-1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/linux-libc-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1767/instances"
+    },
+    {
+        "number": 1766,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1766",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1766",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4863-libwebpmux3",
+            "severity": "warning",
+            "description": "CVE-2023-4863 low vulnerability for libwebpmux3 package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libwebpmux3/copyright reports libwebpmux3 at version 0.6.1-2+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libwebpmux3/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1766/instances"
+    },
+    {
+        "number": 1765,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1765",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1765",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4863-libwebpdemux2",
+            "severity": "warning",
+            "description": "CVE-2023-4863 low vulnerability for libwebpdemux2 package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libwebpdemux2/copyright reports libwebpdemux2 at version 0.6.1-2+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libwebpdemux2/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1765/instances"
+    },
+    {
+        "number": 1764,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1764",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1764",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4863-libwebp6",
+            "severity": "warning",
+            "description": "CVE-2023-4863 low vulnerability for libwebp6 package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libwebp6/copyright reports libwebp6 at version 0.6.1-2+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libwebp6/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1764/instances"
+    },
+    {
+        "number": 1763,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1763",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1763",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4863-libwebp-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4863 low vulnerability for libwebp-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libwebp-dev/copyright reports libwebp-dev at version 0.6.1-2+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libwebp-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1763/instances"
+    },
+    {
+        "number": 1762,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1762",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1762",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4813-libc6-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4813 medium vulnerability for libc6-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc6-dev/copyright reports libc6-dev at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc6-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1762/instances"
+    },
+    {
+        "number": 1761,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1761",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1761",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4813-libc6",
+            "severity": "warning",
+            "description": "CVE-2023-4813 medium vulnerability for libc6 package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc6/copyright reports libc6 at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc6/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1761/instances"
+    },
+    {
+        "number": 1760,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1760",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1760",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4813-libc-dev-bin",
+            "severity": "warning",
+            "description": "CVE-2023-4813 medium vulnerability for libc-dev-bin package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc-dev-bin/copyright reports libc-dev-bin at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc-dev-bin/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1760/instances"
+    },
+    {
+        "number": 1759,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1759",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1759",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4813-libc-bin",
+            "severity": "warning",
+            "description": "CVE-2023-4813 medium vulnerability for libc-bin package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc-bin/copyright reports libc-bin at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc-bin/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1759/instances"
+    },
+    {
+        "number": 1758,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1758",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1758",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4806-libc6-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4806 medium vulnerability for libc6-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc6-dev/copyright reports libc6-dev at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc6-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1758/instances"
+    },
+    {
+        "number": 1757,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1757",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1757",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4806-libc6",
+            "severity": "warning",
+            "description": "CVE-2023-4806 medium vulnerability for libc6 package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc6/copyright reports libc6 at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc6/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1757/instances"
+    },
+    {
+        "number": 1756,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1756",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1756",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4806-libc-dev-bin",
+            "severity": "warning",
+            "description": "CVE-2023-4806 medium vulnerability for libc-dev-bin package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc-dev-bin/copyright reports libc-dev-bin at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc-dev-bin/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1756/instances"
+    },
+    {
+        "number": 1755,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1755",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1755",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4806-libc-bin",
+            "severity": "warning",
+            "description": "CVE-2023-4806 medium vulnerability for libc-bin package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libc-bin/copyright reports libc-bin at version 2.28-10+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libc-bin/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1755/instances"
+    },
+    {
+        "number": 1754,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1754",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1754",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4641-passwd",
+            "severity": "warning",
+            "description": "CVE-2023-4641 low vulnerability for passwd package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": []
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/passwd/copyright reports passwd at version 1:4.5-1.1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/passwd/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1754/instances"
+    },
+    {
+        "number": 1753,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1753",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1753",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4641-login",
+            "severity": "warning",
+            "description": "CVE-2023-4641 low vulnerability for login package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": []
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/login/copyright reports login at version 1:4.5-1.1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/login/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1753/instances"
+    },
+    {
+        "number": 1752,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1752",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1752",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4623-linux-libc-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4623 high vulnerability for linux-libc-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/linux-libc-dev/copyright reports linux-libc-dev at version 4.19.282-1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/linux-libc-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1752/instances"
+    },
+    {
+        "number": 1751,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1751",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1751",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4622-linux-libc-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4622 high vulnerability for linux-libc-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "high"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/linux-libc-dev/copyright reports linux-libc-dev at version 4.19.282-1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/linux-libc-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1751/instances"
+    },
+    {
+        "number": 1750,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1750",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1750",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4610-linux-libc-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4610 low vulnerability for linux-libc-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": []
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/linux-libc-dev/copyright reports linux-libc-dev at version 4.19.282-1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/linux-libc-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1750/instances"
+    },
+    {
+        "number": 1749,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1749",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1749",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-4569-linux-libc-dev",
+            "severity": "warning",
+            "description": "CVE-2023-4569 medium vulnerability for linux-libc-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/linux-libc-dev/copyright reports linux-libc-dev at version 4.19.282-1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/linux-libc-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1749/instances"
+    },
+    {
+        "number": 1748,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1748",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1748",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-45322-libxml2-dev",
+            "severity": "warning",
+            "description": "CVE-2023-45322 medium vulnerability for libxml2-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libxml2-dev/copyright reports libxml2-dev at version 2.9.4+dfsg1-7+deb10u6  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libxml2-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1748/instances"
+    },
+    {
+        "number": 1747,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1747",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1747",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-45322-libxml2",
+            "severity": "warning",
+            "description": "CVE-2023-45322 medium vulnerability for libxml2 package",
+            "name": "DpkgMatcherExactDirectMatch",
+            "tags": [],
+            "security_severity_level": "medium"
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libxml2/copyright reports libxml2 at version 2.9.4+dfsg1-7+deb10u6  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libxml2/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1747/instances"
+    },
+    {
+        "number": 1746,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1746",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1746",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-44487-libnghttp2-14",
+            "severity": "warning",
+            "description": "CVE-2023-44487 low vulnerability for libnghttp2-14 package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": []
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libnghttp2-14/copyright reports libnghttp2-14 at version 1.36.0-2+deb10u1  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libnghttp2-14/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1746/instances"
+    },
+    {
+        "number": 1745,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1745",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1745",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-43787-libx11-dev",
+            "severity": "warning",
+            "description": "CVE-2023-43787 low vulnerability for libx11-dev package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": []
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libx11-dev/copyright reports libx11-dev at version 2:1.6.7-1+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libx11-dev/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1745/instances"
+    },
+    {
+        "number": 1744,
+        "created_at": "2023-10-12T22:33:09Z",
+        "updated_at": "2023-10-12T22:33:09Z",
+        "url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1744",
+        "html_url": "https://github.com/manuelbcd/dependabot-sysdig/security/code-scanning/1744",
+        "state": "open",
+        "fixed_at": null,
+        "dismissed_by": null,
+        "dismissed_at": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "rule": {
+            "id": "CVE-2023-43787-libx11-data",
+            "severity": "warning",
+            "description": "CVE-2023-43787 low vulnerability for libx11-data package",
+            "name": "DpkgMatcherExactIndirectMatch",
+            "tags": []
+        },
+        "tool": {
+            "name": "Grype",
+            "guid": null,
+            "version": "0.50.1"
+        },
+        "most_recent_instance": {
+            "ref": "refs/heads/main",
+            "analysis_key": ".github/workflows/anchore.yml:Anchore-Scan",
+            "environment": "{}",
+            "category": ".github/workflows/anchore.yml:Anchore-Scan",
+            "state": "open",
+            "commit_sha": "37ed4c672048435e368a7b7a11a2eb1bd7148113",
+            "message": {
+                "text": "The path /usr/share/doc/libx11-data/copyright reports libx11-data at version 2:1.6.7-1+deb10u2  which is a vulnerable (deb) package installed in the container"
+            },
+            "location": {
+                "path": "image//usr/share/doc/libx11-data/copyright",
+                "start_line": 1,
+                "end_line": 1,
+                "start_column": 1,
+                "end_column": 1
+            },
+            "classifications": [
+                "documentation"
+            ]
+        },
+        "instances_url": "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts/1744/instances"
     }
 ]
