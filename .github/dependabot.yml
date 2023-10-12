@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/juice-shop"
+    schedule:
+        internval: "weekly"
+        day: "monday"
+        time: "07:57"
+        timezone: "America/New_York"
+    open-pull-requests-limit: 2
+
+  - package-ecosystem: "pip"
+    directory: "/juice-shop"
+    schedule:
+      interval: "weekly"
+      time: "07:57"
+      day: "monday"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 2  

@@ -1,0 +1,939 @@
+[
+    {
+        "number": 10,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-qwph-4952-7xr6",
+            "cve_id": "CVE-2022-23540",
+            "summary": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+            "description": "# Overview\n\nIn versions <=8.5.1 of jsonwebtoken library, lack of algorithm definition and a falsy secret or key in the `jwt.verify()` function can lead to signature validation bypass due to defaulting to the `none` algorithm for signature verification.\n\n# Am I affected?\nYou will be affected if all the following are true in the `jwt.verify()` function:\n- a token with no signature is received\n- no algorithms are specified \n- a falsy (e.g. null, false, undefined) secret or key is passed \n\n# How do I fix it?\n \nUpdate to version 9.0.0 which removes the default support for the none algorithm in the `jwt.verify()` method. \n\n# Will the fix impact my users?\n\nThere will be no impact, if you update to version 9.0.0 and you don’t need to allow for the `none` algorithm. If you need 'none' algorithm, you have to explicitly specify that in `jwt.verify()` options.\n",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-qwph-4952-7xr6",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2022-23540",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-qwph-4952-7xr6"
+                },
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3"
+                },
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23540"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-qwph-4952-7xr6"
+                }
+            ],
+            "published_at": "2022-12-22T03:32:59Z",
+            "updated_at": "2023-07-14T22:03:14Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "jsonwebtoken"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "< 9.0.0",
+                    "first_patched_version": {
+                        "identifier": "9.0.0"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:L",
+                "score": 6.4
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-287",
+                    "name": "Improper Authentication"
+                },
+                {
+                    "cwe_id": "CWE-327",
+                    "name": "Use of a Broken or Risky Cryptographic Algorithm"
+                },
+                {
+                    "cwe_id": "CWE-347",
+                    "name": "Improper Verification of Cryptographic Signature"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 9.0.0",
+            "first_patched_version": {
+                "identifier": "9.0.0"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/10",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/10",
+        "created_at": "2023-10-12T17:40:29Z",
+        "updated_at": "2023-10-12T17:40:29Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 9,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-hjrf-2m68-5959",
+            "cve_id": "CVE-2022-23541",
+            "summary": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC",
+            "description": "# Overview\n\nVersions `<=8.5.1` of `jsonwebtoken` library can be misconfigured so that passing a poorly implemented key retrieval function (referring to the `secretOrPublicKey` argument from the [readme link](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback)) will result in incorrect verification of tokens. There is a possibility of using a different algorithm and key combination in verification  than the one that was used to sign the tokens. Specifically, tokens signed with an asymmetric public key could be verified with a symmetric HS256 algorithm. This can lead to successful validation of forged tokens. \n\n# Am I affected?\n\nYou will be affected if your application is supporting usage of both symmetric key and asymmetric key in jwt.verify() implementation with the same key retrieval function. \n\n# How do I fix it?\n \nUpdate to version 9.0.0.\n\n# Will the fix impact my users?\n\nThere is no impact for end users",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-hjrf-2m68-5959",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2022-23541",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-hjrf-2m68-5959"
+                },
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3"
+                },
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23541"
+                },
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/releases/tag/v9.0.0"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-hjrf-2m68-5959"
+                }
+            ],
+            "published_at": "2022-12-22T03:33:19Z",
+            "updated_at": "2023-01-29T05:06:34Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "jsonwebtoken"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "<= 8.5.1",
+                    "first_patched_version": {
+                        "identifier": "9.0.0"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:L",
+                "score": 5.0
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-287",
+                    "name": "Improper Authentication"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "<= 8.5.1",
+            "first_patched_version": {
+                "identifier": "9.0.0"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/9",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/9",
+        "created_at": "2023-10-12T17:40:29Z",
+        "updated_at": "2023-10-12T17:40:29Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 8,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-8cf7-32gw-wr33",
+            "cve_id": "CVE-2022-23539",
+            "summary": "jsonwebtoken unrestricted key type could lead to legacy keys usage ",
+            "description": "# Overview\n\nVersions `<=8.5.1` of `jsonwebtoken` library could be misconfigured so that legacy, insecure key types are used for signature verification. For example, DSA keys could be used with the RS256 algorithm. \n\n# Am I affected?\n\nYou are affected if you are using an algorithm and a key type other than the combinations mentioned below\n\n| Key type |  algorithm                                    |\n|----------|------------------------------------------|\n| ec           | ES256, ES384, ES512                      |\n| rsa          | RS256, RS384, RS512, PS256, PS384, PS512 |\n| rsa-pss  | PS256, PS384, PS512                      |\n\nAnd for Elliptic Curve algorithms:\n\n| `alg` | Curve      |\n|-------|------------|\n| ES256 | prime256v1 |\n| ES384 | secp384r1  |\n| ES512 | secp521r1  |\n\n# How do I fix it?\n\nUpdate to version 9.0.0. This version validates for asymmetric key type and algorithm combinations. Please refer to the above mentioned algorithm / key type combinations for the valid secure configuration. After updating to version 9.0.0, If you still intend to continue with signing or verifying tokens using invalid key type/algorithm value combinations, you’ll need to set the `allowInvalidAsymmetricKeyTypes` option  to `true` in the `sign()` and/or `verify()` functions.\n\n# Will the fix impact my users?\n\nThere will be no impact, if you update to version 9.0.0 and you already use a valid secure combination of key type and algorithm. Otherwise,  use the  `allowInvalidAsymmetricKeyTypes` option  to `true` in the `sign()` and `verify()` functions to continue usage of invalid key type/algorithm combination in 9.0.0 for legacy compatibility. \n\n",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-8cf7-32gw-wr33",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2022-23539",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/security/advisories/GHSA-8cf7-32gw-wr33"
+                },
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/commit/e1fa9dcc12054a8681db4e6373da1b30cf7016e3"
+                },
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23539"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-8cf7-32gw-wr33"
+                }
+            ],
+            "published_at": "2022-12-22T03:32:22Z",
+            "updated_at": "2023-01-31T05:01:09Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "jsonwebtoken"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "<= 8.5.1",
+                    "first_patched_version": {
+                        "identifier": "9.0.0"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": null,
+                "score": 0.0
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-327",
+                    "name": "Use of a Broken or Risky Cryptographic Algorithm"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "<= 8.5.1",
+            "first_patched_version": {
+                "identifier": "9.0.0"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/8",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/8",
+        "created_at": "2023-10-12T17:40:29Z",
+        "updated_at": "2023-10-12T17:40:29Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 7,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-rjqq-98f6-6j3r",
+            "cve_id": "CVE-2021-26539",
+            "summary": "Improper Input Validation in sanitize-html",
+            "description": "Apostrophe Technologies sanitize-html before 2.3.1 does not properly handle internationalized domain name (IDN) which could allow an attacker to bypass hostname whitelist validation set by the \"allowedIframeHostnames\" option.",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-rjqq-98f6-6j3r",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2021-26539",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-26539"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/pull/458"
+                },
+                {
+                    "url": "https://advisory.checkmarx.net/advisory/CX-2021-4308"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/blob/main/CHANGELOG.md#231-2021-01-22"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/commit/bdf7836ef8f0e5b21f9a1aab0623ae8fcd09c1da"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-rjqq-98f6-6j3r"
+                }
+            ],
+            "published_at": "2021-05-06T16:10:05Z",
+            "updated_at": "2023-04-21T19:19:09Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "sanitize-html"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "< 2.3.1",
+                    "first_patched_version": {
+                        "identifier": "2.3.1"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                "score": 5.3
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-20",
+                    "name": "Improper Input Validation"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 2.3.1",
+            "first_patched_version": {
+                "identifier": "2.3.1"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/7",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/7",
+        "created_at": "2023-10-12T17:40:29Z",
+        "updated_at": "2023-10-12T17:40:29Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 6,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-mjxr-4v3x-q3m4",
+            "cve_id": "CVE-2021-26540",
+            "summary": "Improper Input Validation in sanitize-html",
+            "description": "Apostrophe Technologies sanitize-html before 2.3.2 does not properly validate the hostnames set by the \"allowedIframeHostnames\" option when the \"allowIframeRelativeUrls\" is set to true, which allows attackers to bypass hostname whitelist for iframe element, related using an src value that starts with \"/\\\\example.com\".",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-mjxr-4v3x-q3m4",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2021-26540",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-26540"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/pull/460"
+                },
+                {
+                    "url": "https://advisory.checkmarx.net/advisory/CX-2021-4309"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/blob/main/CHANGELOG.md#232-2021-01-26"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-mjxr-4v3x-q3m4"
+                }
+            ],
+            "published_at": "2021-05-06T16:10:19Z",
+            "updated_at": "2023-02-01T05:05:21Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "sanitize-html"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "< 2.3.2",
+                    "first_patched_version": {
+                        "identifier": "2.3.2"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                "score": 5.3
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-20",
+                    "name": "Improper Input Validation"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 2.3.2",
+            "first_patched_version": {
+                "identifier": "2.3.2"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/6",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/6",
+        "created_at": "2023-10-12T17:40:28Z",
+        "updated_at": "2023-10-12T17:40:28Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 5,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "marsdb"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-5mrr-rgp6-x4gr",
+            "cve_id": null,
+            "summary": "Command Injection in marsdb",
+            "description": "All versions of `marsdb` are vulnerable to Command Injection. In the `DocumentMatcher` class, selectors on `$where` clauses are passed to a Function constructor unsanitized. This allows attackers to run arbitrary commands in the system when the function is executed.\n\n\n## Recommendation\n\nNo fix is currently available. Consider using an alternative package until a fix is made available.",
+            "severity": "critical",
+            "identifiers": [
+                {
+                    "value": "GHSA-5mrr-rgp6-x4gr",
+                    "type": "GHSA"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://github.com/bkimminich/juice-shop/issues/1173"
+                },
+                {
+                    "url": "https://www.npmjs.com/advisories/1122"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-5mrr-rgp6-x4gr"
+                }
+            ],
+            "published_at": "2020-09-03T19:39:05Z",
+            "updated_at": "2023-01-09T05:03:48Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "marsdb"
+                    },
+                    "severity": "critical",
+                    "vulnerable_version_range": ">= 0.0.0",
+                    "first_patched_version": null
+                }
+            ],
+            "cvss": {
+                "vector_string": null,
+                "score": 0.0
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-77",
+                    "name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "marsdb"
+            },
+            "severity": "critical",
+            "vulnerable_version_range": ">= 0.0.0",
+            "first_patched_version": null
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/5",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/5",
+        "created_at": "2023-10-12T17:40:28Z",
+        "updated_at": "2023-10-12T17:40:28Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 4,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "express-jwt"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-6g6m-m6h5-w9gf",
+            "cve_id": "CVE-2020-15084",
+            "summary": "Authorization bypass in express-jwt",
+            "description": "### Overview\nVersions before and including 5.3.3, we are not enforcing the **algorithms** entry to be specified in the configuration.\nWhen **algorithms** is not specified in the configuration, with the combination of jwks-rsa, it may lead to authorization bypass. \n\n### Am I affected?\nYou are affected by this vulnerability if all of the following conditions apply:\n\nYou are using express-jwt\nAND \nYou do not have **algorithms**  configured in your express-jwt configuration.\nAND\nYou are using libraries such as jwks-rsa as the **secret**. \n\n### How to fix that?\nSpecify **algorithms** in the express-jwt configuration. The following is an example of a proper configuration\n\n``` \nconst checkJwt = jwt({\n  secret: jwksRsa.expressJwtSecret({\n    rateLimit: true,\n    jwksRequestsPerMinute: 5,\n    jwksUri: `https://${DOMAIN}/.well-known/jwks.json`\n  }),\n  // Validate the audience and the issuer.\n  audience: process.env.AUDIENCE,\n  issuer: `https://${DOMAIN}/`,\n  // restrict allowed algorithms\n  algorithms: ['RS256']\n}); \n```\n\n### Will this update impact my users?\nThe fix provided in patch will not affect your users if you specified the algorithms allowed. The patch now makes **algorithms** a required configuration. \n\n\n### Credit\nIST Group",
+            "severity": "high",
+            "identifiers": [
+                {
+                    "value": "GHSA-6g6m-m6h5-w9gf",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2020-15084",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://github.com/auth0/express-jwt/security/advisories/GHSA-6g6m-m6h5-w9gf"
+                },
+                {
+                    "url": "https://github.com/auth0/express-jwt/commit/7ecab5f8f0cab5297c2b863596566eb0c019cdef"
+                },
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15084"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-6g6m-m6h5-w9gf"
+                }
+            ],
+            "published_at": "2020-06-30T16:05:24Z",
+            "updated_at": "2023-02-02T05:04:02Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "express-jwt"
+                    },
+                    "severity": "high",
+                    "vulnerable_version_range": "<= 5.3.3",
+                    "first_patched_version": {
+                        "identifier": "6.0.0"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:N",
+                "score": 7.7
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-285",
+                    "name": "Improper Authorization"
+                },
+                {
+                    "cwe_id": "CWE-863",
+                    "name": "Incorrect Authorization"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "express-jwt"
+            },
+            "severity": "high",
+            "vulnerable_version_range": "<= 5.3.3",
+            "first_patched_version": {
+                "identifier": "6.0.0"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/4",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/4",
+        "created_at": "2023-10-12T17:40:28Z",
+        "updated_at": "2023-10-12T17:40:28Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 3,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-3j7m-hmh3-9jmp",
+            "cve_id": "CVE-2016-1000237",
+            "summary": "Cross-Site Scripting in sanitize-html",
+            "description": "Affected versions of `sanitize-html` do not sanitize input recursively, which may allow an attacker to execute arbitrary Javascript.\n\n\n## Recommendation\n\nUpdate to version 1.4.3 or later.",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-3j7m-hmh3-9jmp",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2016-1000237",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-1000237"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/issues/29"
+                },
+                {
+                    "url": "https://github.com/apostrophecms/sanitize-html/commit/762fbc7bba389f3f789cc291c1eb2b64f60f2caf"
+                },
+                {
+                    "url": "https://raw.githubusercontent.com/distributedweaknessfiling/cvelist/master/2016/1000xxx/CVE-2016-1000237.json"
+                },
+                {
+                    "url": "https://github.com/punkave/sanitize-html/issues/29"
+                },
+                {
+                    "url": "https://www.npmjs.com/advisories/135"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-3j7m-hmh3-9jmp"
+                }
+            ],
+            "published_at": "2020-04-16T03:14:47Z",
+            "updated_at": "2023-01-09T05:02:23Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "sanitize-html"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "< 1.4.3",
+                    "first_patched_version": {
+                        "identifier": "1.4.3"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                "score": 6.1
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-79",
+                    "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "< 1.4.3",
+            "first_patched_version": {
+                "identifier": "1.4.3"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/3",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/3",
+        "created_at": "2023-10-12T17:40:28Z",
+        "updated_at": "2023-10-12T17:40:28Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 2,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-xc6g-ggrc-qq4r",
+            "cve_id": "CVE-2017-16016",
+            "summary": "Cross-Site Scripting in sanitize-html",
+            "description": "Affected versions of `sanitize-html` are vulnerable to cross-site scripting when allowedTags includes at least one `nonTextTag`.\n\n## Proof of Concept\n\n```js\nvar sanitizeHtml = require('sanitize-html');\n\nvar dirty = '!<textarea>&lt;/textarea&gt;<svg/onload=prompt`xs`&gt;</textarea>!';\nvar clean = sanitizeHtml(dirty, {\n    allowedTags: [ 'textarea' ]\n});\n\nconsole.log(clean);\n\n// !<textarea></textarea><svg/onload=prompt`xs`></textarea>!\n```\n\n\n## Recommendation\n\nUpdate to version 1.11.4 or later.",
+            "severity": "medium",
+            "identifiers": [
+                {
+                    "value": "GHSA-xc6g-ggrc-qq4r",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2017-16016",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-16016"
+                },
+                {
+                    "url": "https://github.com/punkave/sanitize-html/issues/100"
+                },
+                {
+                    "url": "https://github.com/punkave/sanitize-html/commit/5d205a1005ba0df80e21d8c64a15bb3accdb2403)))"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-xc6g-ggrc-qq4r"
+                },
+                {
+                    "url": "https://npmjs.com/package/sanitize-html#discarding-the-entire-contents-of-a-disallowed-tag"
+                },
+                {
+                    "url": "https://www.npmjs.com/advisories/154"
+                },
+                {
+                    "url": "https://github.com/punkave/sanitize-html/commit/5d205a1005ba0df80e21d8c64a15bb3accdb2403"
+                }
+            ],
+            "published_at": "2018-11-09T17:47:23Z",
+            "updated_at": "2023-09-08T23:04:55Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "sanitize-html"
+                    },
+                    "severity": "medium",
+                    "vulnerable_version_range": "<= 1.11.1",
+                    "first_patched_version": {
+                        "identifier": "1.11.4"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": null,
+                "score": 0.0
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-79",
+                    "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "sanitize-html"
+            },
+            "severity": "medium",
+            "vulnerable_version_range": "<= 1.11.1",
+            "first_patched_version": {
+                "identifier": "1.11.4"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/2",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/2",
+        "created_at": "2023-10-12T17:40:28Z",
+        "updated_at": "2023-10-12T17:40:28Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    },
+    {
+        "number": 1,
+        "state": "open",
+        "dependency": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "manifest_path": "package.json",
+            "scope": "runtime"
+        },
+        "security_advisory": {
+            "ghsa_id": "GHSA-c7hr-j4mj-j2w6",
+            "cve_id": "CVE-2015-9235",
+            "summary": "Verification Bypass in jsonwebtoken",
+            "description": "Versions 4.2.1 and earlier of `jsonwebtoken` are affected by a verification bypass vulnerability. This is a result of weak validation of the JWT algorithm type, occuring when an attacker is allowed to arbitrarily specify the JWT algorithm.\n\n\n\n\n## Recommendation\n\nUpdate to version 4.2.2 or later.",
+            "severity": "critical",
+            "identifiers": [
+                {
+                    "value": "GHSA-c7hr-j4mj-j2w6",
+                    "type": "GHSA"
+                },
+                {
+                    "value": "CVE-2015-9235",
+                    "type": "CVE"
+                }
+            ],
+            "references": [
+                {
+                    "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-9235"
+                },
+                {
+                    "url": "https://github.com/auth0/node-jsonwebtoken/commit/1bb584bc382295eeb7ee8c4452a673a77a68b687"
+                },
+                {
+                    "url": "https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/"
+                },
+                {
+                    "url": "https://github.com/advisories/GHSA-c7hr-j4mj-j2w6"
+                },
+                {
+                    "url": "https://www.npmjs.com/advisories/17"
+                },
+                {
+                    "url": "https://www.timmclean.net/2015/02/25/jwt-alg-none.html"
+                }
+            ],
+            "published_at": "2018-10-09T00:38:30Z",
+            "updated_at": "2023-01-09T05:02:50Z",
+            "withdrawn_at": null,
+            "vulnerabilities": [
+                {
+                    "package": {
+                        "ecosystem": "npm",
+                        "name": "jsonwebtoken"
+                    },
+                    "severity": "critical",
+                    "vulnerable_version_range": "< 4.2.2",
+                    "first_patched_version": {
+                        "identifier": "4.2.2"
+                    }
+                }
+            ],
+            "cvss": {
+                "vector_string": null,
+                "score": 0.0
+            },
+            "cwes": [
+                {
+                    "cwe_id": "CWE-20",
+                    "name": "Improper Input Validation"
+                }
+            ]
+        },
+        "security_vulnerability": {
+            "package": {
+                "ecosystem": "npm",
+                "name": "jsonwebtoken"
+            },
+            "severity": "critical",
+            "vulnerable_version_range": "< 4.2.2",
+            "first_patched_version": {
+                "identifier": "4.2.2"
+            }
+        },
+        "url": "https://api.github.com/repos/manuelbcd/juice-shop/dependabot/alerts/1",
+        "html_url": "https://github.com/manuelbcd/juice-shop/security/dependabot/1",
+        "created_at": "2023-10-12T17:40:28Z",
+        "updated_at": "2023-10-12T17:40:28Z",
+        "dismissed_at": null,
+        "dismissed_by": null,
+        "dismissed_reason": null,
+        "dismissed_comment": null,
+        "fixed_at": null,
+        "auto_dismissed_at": null
+    }
+]

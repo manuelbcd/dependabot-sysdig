@@ -1,0 +1,1091 @@
+{
+    "namespace": "default",
+    "workloadKind": "deployment",
+    "workloadName": "juice-shop",
+    "container": "juice-shop",
+    "imageID": "sha256:c74c9777bf753949844a46528f06183ddb358304aa03b082f8a78ebfb386465a",
+    "packages": [
+        {
+            "purl": "pkg:apk/alpine/musl@1.2.2-r3?distro=alpine-3.14.3",
+            "name": "musl",
+            "version": "1.2.2-r3",
+            "installedViaPackageManager": true,
+            "srcName": "musl",
+            "osFamily": "alpine",
+            "osVersion": "3.14.3",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:apk/alpine/alpine-baselayout@3.2.0-r16?distro=alpine-3.14.3",
+            "name": "alpine-baselayout",
+            "version": "3.2.0-r16",
+            "installedViaPackageManager": true,
+            "srcName": "alpine-baselayout",
+            "osFamily": "alpine",
+            "osVersion": "3.14.3",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:apk/alpine/libcrypto1.1@1.1.1l-r0?distro=alpine-3.14.3",
+            "name": "libcrypto1.1",
+            "version": "1.1.1l-r0",
+            "installedViaPackageManager": true,
+            "srcName": "openssl",
+            "osFamily": "alpine",
+            "osVersion": "3.14.3",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:apk/alpine/musl-utils@1.2.2-r3?distro=alpine-3.14.3",
+            "name": "musl-utils",
+            "version": "1.2.2-r3",
+            "installedViaPackageManager": true,
+            "srcName": "musl",
+            "osFamily": "alpine",
+            "osVersion": "3.14.3",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:apk/alpine/libgcc@10.3.1_git20210424-r2?distro=alpine-3.14.3",
+            "name": "libgcc",
+            "version": "10.3.1_git20210424-r2",
+            "installedViaPackageManager": true,
+            "srcName": "gcc",
+            "osFamily": "alpine",
+            "osVersion": "3.14.3",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:apk/alpine/libstdc++@10.3.1_git20210424-r2?distro=alpine-3.14.3",
+            "name": "libstdc++",
+            "version": "10.3.1_git20210424-r2",
+            "installedViaPackageManager": true,
+            "srcName": "gcc",
+            "osFamily": "alpine",
+            "osVersion": "3.14.3",
+            "arch": ""
+        },
+        {
+            "purl": "pkg:npm/ansi-styles@3.2.1",
+            "name": "ansi-styles",
+            "version": "3.2.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/arr-flatten@1.1.0",
+            "name": "arr-flatten",
+            "version": "1.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/arr-union@3.1.0",
+            "name": "arr-union",
+            "version": "3.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/array-unique@0.3.2",
+            "name": "array-unique",
+            "version": "0.3.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/assign-symbols@1.0.0",
+            "name": "assign-symbols",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/define-property@1.0.0",
+            "name": "define-property",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-accessor-descriptor@1.0.0",
+            "name": "is-accessor-descriptor",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-data-descriptor@1.0.0",
+            "name": "is-data-descriptor",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-descriptor@1.0.2",
+            "name": "is-descriptor",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/base@0.11.2",
+            "name": "base",
+            "version": "0.11.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/extend-shallow@2.0.1",
+            "name": "extend-shallow",
+            "version": "2.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/braces@2.3.2",
+            "name": "braces",
+            "version": "2.3.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/cache-base@1.0.1",
+            "name": "cache-base",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/chalk@2.4.2",
+            "name": "chalk",
+            "version": "2.4.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/check-dependencies@1.1.0",
+            "name": "check-dependencies",
+            "version": "1.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/define-property@0.2.5",
+            "name": "define-property",
+            "version": "0.2.5",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/class-utils@0.3.6",
+            "name": "class-utils",
+            "version": "0.3.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/collection-visit@1.0.0",
+            "name": "collection-visit",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/color-convert@1.9.3",
+            "name": "color-convert",
+            "version": "1.9.3",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/color-name@1.1.3",
+            "name": "color-name",
+            "version": "1.1.3",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/colors@1.4.0",
+            "name": "colors",
+            "version": "1.4.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/component-emitter@1.3.0",
+            "name": "component-emitter",
+            "version": "1.3.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/copy-descriptor@0.1.1",
+            "name": "copy-descriptor",
+            "version": "0.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/debug@2.6.9",
+            "name": "debug",
+            "version": "2.6.9",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/define-property@2.0.2",
+            "name": "define-property",
+            "version": "2.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/detect-file@1.0.0",
+            "name": "detect-file",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/escape-string-regexp@1.0.5",
+            "name": "escape-string-regexp",
+            "version": "1.0.5",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/expand-tilde@2.0.2",
+            "name": "expand-tilde",
+            "version": "2.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-extendable@1.0.1",
+            "name": "is-extendable",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/extend-shallow@3.0.2",
+            "name": "extend-shallow",
+            "version": "3.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/fill-range@4.0.0",
+            "name": "fill-range",
+            "version": "4.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/findup-sync@2.0.0",
+            "name": "findup-sync",
+            "version": "2.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/for-in@1.0.2",
+            "name": "for-in",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/get-value@2.0.6",
+            "name": "get-value",
+            "version": "2.0.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/global-modules@1.0.0",
+            "name": "global-modules",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/global-prefix@1.0.2",
+            "name": "global-prefix",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/has-flag@3.0.0",
+            "name": "has-flag",
+            "version": "3.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/has-value@1.0.0",
+            "name": "has-value",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/kind-of@4.0.0",
+            "name": "kind-of",
+            "version": "4.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/has-values@1.0.0",
+            "name": "has-values",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/homedir-polyfill@1.0.3",
+            "name": "homedir-polyfill",
+            "version": "1.0.3",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/ini@1.3.8",
+            "name": "ini",
+            "version": "1.3.8",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/kind-of@3.2.2",
+            "name": "kind-of",
+            "version": "3.2.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-accessor-descriptor@0.1.6",
+            "name": "is-accessor-descriptor",
+            "version": "0.1.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-buffer@1.1.6",
+            "name": "is-buffer",
+            "version": "1.1.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/kind-of@5.1.0",
+            "name": "kind-of",
+            "version": "5.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-data-descriptor@0.1.4",
+            "name": "is-data-descriptor",
+            "version": "0.1.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-number@3.0.0",
+            "name": "is-number",
+            "version": "3.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-plain-object@2.0.4",
+            "name": "is-plain-object",
+            "version": "2.0.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-glob@3.1.0",
+            "name": "is-glob",
+            "version": "3.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-extglob@2.1.1",
+            "name": "is-extglob",
+            "version": "2.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-descriptor@0.1.6",
+            "name": "is-descriptor",
+            "version": "0.1.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-extendable@0.1.1",
+            "name": "is-extendable",
+            "version": "0.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-windows@1.0.2",
+            "name": "is-windows",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/isarray@1.0.0",
+            "name": "isarray",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/isexe@2.0.0",
+            "name": "isexe",
+            "version": "2.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/isobject@3.0.1",
+            "name": "isobject",
+            "version": "3.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/kind-of@6.0.3",
+            "name": "kind-of",
+            "version": "6.0.3",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/map-visit@1.0.0",
+            "name": "map-visit",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/micromatch@3.1.10",
+            "name": "micromatch",
+            "version": "3.1.10",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/mixin-deep@1.3.2",
+            "name": "mixin-deep",
+            "version": "1.3.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/ms@2.0.0",
+            "name": "ms",
+            "version": "2.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/object-copy@0.1.0",
+            "name": "object-copy",
+            "version": "0.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/object-visit@1.0.1",
+            "name": "object-visit",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/pascalcase@0.1.1",
+            "name": "pascalcase",
+            "version": "0.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/regex-not@1.0.2",
+            "name": "regex-not",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/repeat-string@1.6.1",
+            "name": "repeat-string",
+            "version": "1.6.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/repeat-element@1.1.4",
+            "name": "repeat-element",
+            "version": "1.1.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/resolve-dir@1.0.1",
+            "name": "resolve-dir",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/ret@0.1.15",
+            "name": "ret",
+            "version": "0.1.15",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/safe-regex@1.1.0",
+            "name": "safe-regex",
+            "version": "1.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/set-value@2.0.1",
+            "name": "set-value",
+            "version": "2.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/snapdragon@0.8.2",
+            "name": "snapdragon",
+            "version": "0.8.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/snapdragon-node@2.1.1",
+            "name": "snapdragon-node",
+            "version": "2.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/snapdragon-util@3.0.1",
+            "name": "snapdragon-util",
+            "version": "3.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/source-map@0.5.7",
+            "name": "source-map",
+            "version": "0.5.7",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/split-string@3.1.0",
+            "name": "split-string",
+            "version": "3.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/static-extend@0.1.2",
+            "name": "static-extend",
+            "version": "0.1.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/supports-color@5.5.0",
+            "name": "supports-color",
+            "version": "5.5.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/to-object-path@0.3.0",
+            "name": "to-object-path",
+            "version": "0.3.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/to-regex@3.0.2",
+            "name": "to-regex",
+            "version": "3.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/to-regex-range@2.1.1",
+            "name": "to-regex-range",
+            "version": "2.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/union-value@1.0.1",
+            "name": "union-value",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/isobject@2.1.0",
+            "name": "isobject",
+            "version": "2.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/has-value@0.3.1",
+            "name": "has-value",
+            "version": "0.3.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/has-values@0.1.4",
+            "name": "has-values",
+            "version": "0.1.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/unset-value@1.0.0",
+            "name": "unset-value",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/use@3.1.1",
+            "name": "use",
+            "version": "3.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/which@1.3.1",
+            "name": "which",
+            "version": "1.3.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/jsonstream@1.3.5",
+            "name": "JSONStream",
+            "version": "1.3.5",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/abbrev@1.1.1",
+            "name": "abbrev",
+            "version": "1.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/ansi-regex@2.1.1",
+            "name": "ansi-regex",
+            "version": "2.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/readable-stream@2.3.6",
+            "name": "readable-stream",
+            "version": "2.3.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/are-we-there-yet@1.1.4",
+            "name": "are-we-there-yet",
+            "version": "1.1.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/balanced-match@1.0.0",
+            "name": "balanced-match",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/brace-expansion@1.1.11",
+            "name": "brace-expansion",
+            "version": "1.1.11",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/chownr@1.1.4",
+            "name": "chownr",
+            "version": "1.1.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/cmd-shim@3.0.3",
+            "name": "cmd-shim",
+            "version": "3.0.3",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/code-point-at@1.1.0",
+            "name": "code-point-at",
+            "version": "1.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/concat-map@0.0.1",
+            "name": "concat-map",
+            "version": "0.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/config-chain@1.1.12",
+            "name": "config-chain",
+            "version": "1.1.12",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/console-control-strings@1.1.0",
+            "name": "console-control-strings",
+            "version": "1.1.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/core-util-is@1.0.2",
+            "name": "core-util-is",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/delegates@1.0.0",
+            "name": "delegates",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/encoding@0.1.12",
+            "name": "encoding",
+            "version": "0.1.12",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/err-code@1.1.2",
+            "name": "err-code",
+            "version": "1.1.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/figgy-pudding@3.5.1",
+            "name": "figgy-pudding",
+            "version": "3.5.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/find-npm-prefix@1.0.2",
+            "name": "find-npm-prefix",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/fs-vacuum@1.2.10",
+            "name": "fs-vacuum",
+            "version": "1.2.10",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/fs.realpath@1.0.0",
+            "name": "fs.realpath",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/aproba@1.2.0",
+            "name": "aproba",
+            "version": "1.2.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/string-width@1.0.2",
+            "name": "string-width",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/gauge@2.7.4",
+            "name": "gauge",
+            "version": "2.7.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/graceful-fs@4.2.4",
+            "name": "graceful-fs",
+            "version": "4.2.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/glob@7.1.6",
+            "name": "glob",
+            "version": "7.1.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/gentle-fs@2.3.1",
+            "name": "gentle-fs",
+            "version": "2.3.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/iferr@0.1.5",
+            "name": "iferr",
+            "version": "0.1.5",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/has-unicode@2.0.1",
+            "name": "has-unicode",
+            "version": "2.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/http-cache-semantics@3.8.1",
+            "name": "http-cache-semantics",
+            "version": "3.8.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/iconv-lite@0.4.23",
+            "name": "iconv-lite",
+            "version": "0.4.23",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/infer-owner@1.0.4",
+            "name": "infer-owner",
+            "version": "1.0.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/inflight@1.0.6",
+            "name": "inflight",
+            "version": "1.0.6",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/inherits@2.0.4",
+            "name": "inherits",
+            "version": "2.0.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/is-fullwidth-code-point@1.0.0",
+            "name": "is-fullwidth-code-point",
+            "version": "1.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/json-parse-better-errors@1.0.2",
+            "name": "json-parse-better-errors",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/jsonparse@1.3.1",
+            "name": "jsonparse",
+            "version": "1.3.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/libnpm@3.0.1",
+            "name": "libnpm",
+            "version": "3.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/lru-cache@5.1.1",
+            "name": "lru-cache",
+            "version": "5.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/make-fetch-happen@5.0.2",
+            "name": "make-fetch-happen",
+            "version": "5.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/minimatch@3.0.4",
+            "name": "minimatch",
+            "version": "3.0.4",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/mkdirp@0.5.5",
+            "name": "mkdirp",
+            "version": "0.5.5",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/node-fetch-npm@2.0.2",
+            "name": "node-fetch-npm",
+            "version": "2.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/nopt@4.0.3",
+            "name": "nopt",
+            "version": "4.0.3",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/npm-package-arg@6.1.1",
+            "name": "npm-package-arg",
+            "version": "6.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/safe-buffer@5.2.1",
+            "name": "safe-buffer",
+            "version": "5.2.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/npm-registry-fetch@4.0.7",
+            "name": "npm-registry-fetch",
+            "version": "4.0.7",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/npmlog@4.1.2",
+            "name": "npmlog",
+            "version": "4.1.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/number-is-nan@1.0.1",
+            "name": "number-is-nan",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/object-assign@4.1.1",
+            "name": "object-assign",
+            "version": "4.1.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/once@1.4.0",
+            "name": "once",
+            "version": "1.4.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/os-homedir@1.0.2",
+            "name": "os-homedir",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/os-tmpdir@1.0.2",
+            "name": "os-tmpdir",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/osenv@0.1.5",
+            "name": "osenv",
+            "version": "0.1.5",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/path-is-absolute@1.0.1",
+            "name": "path-is-absolute",
+            "version": "1.0.1",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/path-is-inside@1.0.2",
+            "name": "path-is-inside",
+            "version": "1.0.2",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        },
+        {
+            "purl": "pkg:npm/process-nextick-args@2.0.0",
+            "name": "process-nextick-args",
+            "version": "2.0.0",
+            "installedViaPackageManager": false,
+            "type": "npm"
+        }
+    ]
+},
