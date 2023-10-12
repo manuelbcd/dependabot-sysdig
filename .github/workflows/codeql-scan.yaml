@@ -26,7 +26,7 @@ jobs:
         language: [python-go]
     # Specify the container in which actions will run
     container:
-      image: codeql-container:f0f91db
+      image: mcr.microsoft.com/cstsectools/codeql-container
 
     steps:
       - name: Checkout repository
