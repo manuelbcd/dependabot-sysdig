@@ -27,7 +27,8 @@ jobs:
     # Specify the container in which actions will run
     container:
       image: mcr.microsoft.com/cstsectools/codeql-container
-
+      options: --user root
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
