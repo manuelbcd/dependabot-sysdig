@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: "CodeQL custom job"
 
 on:
   workflow_dispatch:
@@ -29,6 +29,7 @@ jobs:
       - name: Build and push Docker image 🐳
         uses: docker/build-push-action@v3
         with:
+          context: ./security-playground
           push: true
           tags: |
             ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
