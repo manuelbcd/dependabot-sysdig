@@ -50,19 +50,17 @@ jobs:
     container:
       image: mcr.microsoft.com/cstsectools/codeql-container
       options: --user root
-      
+  
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Log in to the Container registry 📦
-        uses: docker/login-action@v2
-        with:
-          registry: ${{ env.GITHUB_REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
+      - name: Build
+        run: |
+          ./configure
+          make
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
