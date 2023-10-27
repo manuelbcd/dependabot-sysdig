@@ -48,3 +48,6 @@ jobs:
         sarif_file: ${{ steps.scan.outputs.sarif }}
         # Category
         category: swyft-${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
+    - name: Sysdig Runtime Insights Context
+      run: echo swyft-${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest
+
