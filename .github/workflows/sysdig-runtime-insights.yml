@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Sysdig Runtime Insights context for CodeQL
+name: Sysdig Runtime Context for CodeQL
 
 on:
   workflow_dispatch:
