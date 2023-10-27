@@ -8,6 +8,8 @@ url_endpoint_sysdig = "https://us2.app.sysdig.com/api/scanning/eveintegration/v2
 github_bearer_token = "<GITHUB-TOKEN>"
 sysdig_bearer_token = "<SYSDIG-TOKEN>"
 
+inUseFound = False
+
 headers_github = {
     "Authorization": f"Bearer {github_bearer_token}"
 }
@@ -100,4 +102,7 @@ else:
 
 for item in codeql_objects:
     if item.rule.executed == True:
+        if inUseFound == True:
+            print("In-Use vulnerabilities found: ")
+        inUseFound = True
         print(item.number, " | " , item.rule.id)
