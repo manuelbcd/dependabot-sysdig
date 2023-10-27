@@ -2,12 +2,6 @@ name: "CodeQL custom job"
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: '15 5 * * 3'
 
 permissions: write-all
 
