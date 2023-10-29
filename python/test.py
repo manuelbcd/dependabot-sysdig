@@ -1,14 +1,20 @@
 import requests
-import requests
+import os
 
 # Define urls
 url_endpoint_github = "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts"
 url_endpoint_sysdig = "https://us2.app.sysdig.com/api/scanning/eveintegration/v2/runtimeimages?clusterName=partner-demos"
 
-github_bearer_token = "<GITHUB-TOKEN>"
-sysdig_bearer_token = "<SYSDIG-TOKEN>"
-
+github_bearer_token = os.environ[CODESCAN_GITHUB_SECRET]
+sysdig_bearer_token = os.environ[SYSDIG_SECURE_API_TOKEN]
 inUseFound = False
+
+if github_bearer_token is None: 
+    print("CODESCAN_GITHUB_SECRET is not defined, aborting.")
+    exit(1)
+if sysdig_bearer_token is None: 
+    print("SYSDIG_SECURE_API_TOKEN is not defined, aborting.")
+    exit(1)
 
 headers_github = {
     "Authorization": f"Bearer {github_bearer_token}"
@@ -16,8 +22,6 @@ headers_github = {
 headers_sysdig = {
     "Authorization": f"Bearer {sysdig_bearer_token}"
 }
-
-
 
 responseSysdig = requests.get(url_endpoint_sysdig, headers=headers_sysdig)
 
@@ -32,17 +36,11 @@ if responseSysdig.status_code == 200:
             for package in item["packages"]:
                 #print(package["name"])
                 sysdig_objects.append(package)
-
 else:
     print("HTTP request error:", responseSysdig.status_code)
     exit(1)
 
 
-# -----
-    
-
-
-# Definir la clase Rule
 class Rule:
     def __init__(self, id, severity, description, name, executed):
         self.id = id
@@ -51,7 +49,6 @@ class Rule:
         self.name = name
         self.executed = executed
 
-# Definir la clase CodeqlObject
 class CodeqlObject:
     def __init__(self, number, url, state, rule):
         self.number = number
