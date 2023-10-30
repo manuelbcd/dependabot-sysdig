@@ -6,20 +6,30 @@ url_endpoint_github = "https://api.github.com/repos/manuelbcd/dependabot-sysdig/
 url_endpoint_sysdig = "https://us2.app.sysdig.com/api/scanning/eveintegration/v2/runtimeimages?clusterName=partner-demos"
 
 from os import environ
-if environ.get('CODESCAN_GITHUB_SECRET') is None:
-    print("GITHUB Token is not defined in environment vars")
+required_env_vars = [
+    'CODESCAN_GITHUB_SECRET',
+    'SYSDIG_SECURE_API_TOKEN',
+    'DOCKER_IMAGE',
+    'CODESCAN_CATEGORY'
+]
+
+missing_vars = [var for var in required_env_vars if not environ.get(var)]
+if missing_vars:
+    for var in missing_vars:
+        print(f"{var.replace('_', ' ').title()} is not defined in environment vars")
     exit(1)
-if environ.get('SYSDIG_SECURE_API_TOKEN') is None:
-    print("Sysdig Secure Token is not defined in environment vars")
-    exit(1)
+
 
 github_bearer_token = os.getenv('CODESCAN_GITHUB_SECRET')
 sysdig_bearer_token = os.getenv('SYSDIG_SECURE_API_TOKEN')
+docker_image = os.getenv('DOCKER_IMAGE')
+github_codescan_category = os.getenv('CODESCAN_CATEGORY')
+
 inUseFound = False
 
-headers_github = {
-    "Authorization": f"Bearer {github_bearer_token}"
-}
+
+## Sysdig Risk Spotlight requests for a given docker image
+# Try to find a running container matching with our docker image name
 headers_sysdig = {
     "Authorization": f"Bearer {sysdig_bearer_token}"
 }
@@ -41,6 +51,14 @@ else:
     print("HTTP request error:", responseSysdig.status_code)
     exit(1)
 
+
+
+## GitHub Code-Scanner alerts
+# Get a list of code-scanner alerts from a given tool
+
+headers_github = {
+    "Authorization": f"Bearer {github_bearer_token}"
+}
 
 class Rule:
     def __init__(self, id, severity, description, name, executed):
@@ -67,12 +85,15 @@ if response.status_code == 200:
 
     for item in data:
         
-       #print(item["number"] , " | " , item["rule"]["id"])
+        #print(item["number"] , " | " , item["rule"]["id"])
+
+        # Check 
+        #   if the category corresponds to our github-image<->sysdig-container
+        #   AND if the package is in-use at runtime
         in_use = False
         for inuseObj in sysdig_objects:
-            if inuseObj["name"] in item["rule"]["description"]:
+            if item["most_recent_instance"]["category"] == github_codescan_category and inuseObj["name"] in item["rule"]["description"]:
                 in_use = True
-
 
         rule_data = item["rule"]
         rule_obj = Rule(
@@ -100,7 +121,7 @@ else:
 
 for item in codeql_objects:
     if item.rule.executed == True:
-        if inUseFound == True:
+        if inUseFound == False:
             print("In-Use vulnerabilities found: ")
         inUseFound = True
         print(item.number, " | " , item.rule.id)
