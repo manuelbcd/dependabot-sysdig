@@ -1,7 +1,13 @@
-name: Sysdig Runtime Insights
+name: 2. Sysdig Runtime Insights
 
 on:
   workflow_dispatch:
+
+env:
+  GITHUB_REGISTRY: ghcr.io
+  GITHUB_REPOSITORY: ${{ github.repository }}
+  DOCKER_IMAGE: ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:latest   
+  CODESCAN_CATEGORY: {{DOCKER_IMAGE}}
 
 jobs:
   sysdig-runtime-insights:
@@ -18,5 +24,7 @@ jobs:
         python test.py
       env:
         CODESCAN_GITHUB_SECRET: ${{ secrets.CODESCAN_GITHUB_SECRET }} 
-        SYSDIG_SECURE_API_TOKEN: ${{ secrets.SYSDIG_SECURE_API_TOKEN }}           
+        SYSDIG_SECURE_API_TOKEN: ${{ secrets.SYSDIG_SECURE_API_TOKEN }}    
+        DOCKER_IMAGE: ${{DOCKER_IMAGE}}
+        CODESCAN_CATEGORY: ${{CODESCAN_CATEGORY}}
       working-directory: python
