@@ -5,16 +5,17 @@ import os
 url_endpoint_github = "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts"
 url_endpoint_sysdig = "https://us2.app.sysdig.com/api/scanning/eveintegration/v2/runtimeimages?clusterName=partner-demos"
 
-github_bearer_token = os.environ[CODESCAN_GITHUB_SECRET]
-sysdig_bearer_token = os.environ[SYSDIG_SECURE_API_TOKEN]
-inUseFound = False
+from os import environ
+if environ.get('CODESCAN_GITHUB_SECRET') is None:
+    print("GITHUB Token is not defined in environment vars")
+    exit(1)
+if environ.get('SYSDIG_SECURE_API_TOKEN') is None:
+    print("Sysdig Secure Token is not defined in environment vars")
+    exit(1)
 
-if github_bearer_token is None: 
-    print("CODESCAN_GITHUB_SECRET is not defined, aborting.")
-    exit(1)
-if sysdig_bearer_token is None: 
-    print("SYSDIG_SECURE_API_TOKEN is not defined, aborting.")
-    exit(1)
+github_bearer_token = os.getenv('CODESCAN_GITHUB_SECRET')
+sysdig_bearer_token = os.getenv('SYSDIG_SECURE_API_TOKEN')
+inUseFound = False
 
 headers_github = {
     "Authorization": f"Bearer {github_bearer_token}"
