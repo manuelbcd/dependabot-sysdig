@@ -17,6 +17,6 @@ jobs:
         python -c 'import os;print(os.environ)'
         python test.py
       env:
-        ENV_SECRET: ${{ secrets.CODESCAN_GITHUB_SECRET }} 
-        REPO_SECRET: ${{ secrets.SYSDIG_SECURE_API_TOKEN }}           
+        CODESCAN_GITHUB_SECRET: ${{ secrets.CODESCAN_GITHUB_SECRET }} 
+        SYSDIG_SECURE_API_TOKEN: ${{ secrets.SYSDIG_SECURE_API_TOKEN }}           
       working-directory: python
