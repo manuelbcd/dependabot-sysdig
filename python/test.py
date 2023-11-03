@@ -64,11 +64,12 @@ headers_github = {
 }
 
 class Rule:
-    def __init__(self, id, severity, description, name, executed):
+    def __init__(self, id, severity, description, name, security_severity_level, executed):
         self.id = id
         self.severity = severity
         self.description = description
         self.name = name
+        self.security_severity_level = security_severity_level
         self.executed = executed
 
 class CodeqlObject:
@@ -108,6 +109,7 @@ if response.status_code == 200:
             rule_data["severity"],
             rule_data["description"],
             rule_data["name"],
+            rule_data["security_severity_level"],
             in_use,
         )
         codeql_obj = CodeqlObject(
@@ -138,7 +140,7 @@ for item in codeql_objects:
         print(item.number, " | " , item.rule.id, "| " , item.html_url)
         
         issueTitle = ("Vulnerability: " + str(item.rule.id) + " | " + str(item.rule.severity) + " | In-use at runtime")
-        issueBody = ("Tool: " + str(item.tool) + "<br>" + str(item.message) + "<br><br>Path:" + str(item.path)  + "<br><br>" + str(item.html_url) + "<br>" + str(item.url))
+        issueBody = ("Tool: " + str(item.tool) + " Severity: " + str(item.rule.security_severity_level) +"<br>" + str(item.message) + "<br><br>Path:" + str(item.path)  + "<br><br>" + str(item.html_url) + "<br>" + str(item.url))
 
         responseGithubIssue = requests.post(url_endpoint_github_issues, headers=headers_github, data=json.dumps({"title":issueTitle,"body":issueBody}))
 
