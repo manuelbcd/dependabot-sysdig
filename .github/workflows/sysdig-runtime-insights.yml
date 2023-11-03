@@ -19,6 +19,8 @@ jobs:
     - run: | 
         python -m pip install requests 
         python -c 'import os;print(os.environ)'
+        python -c 'import urllib.parse'
+        python -c 'import json'
         python test.py
       env:
         CODESCAN_GITHUB_SECRET: ${{ secrets.CODESCAN_GITHUB_SECRET }} 

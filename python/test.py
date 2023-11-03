@@ -1,8 +1,11 @@
 import requests
 import os
+import urllib.parse
+import json
 
 # Define urls
 url_endpoint_github = "https://api.github.com/repos/manuelbcd/dependabot-sysdig/code-scanning/alerts"
+url_endpoint_github_issues = "https://api.github.com/repos/manuelbcd/dependabot-sysdig/issues"
 url_endpoint_sysdig = "https://us2.app.sysdig.com/api/scanning/eveintegration/v2/runtimeimages?clusterName=partner-demos"
 
 from os import environ
@@ -69,11 +72,15 @@ class Rule:
         self.executed = executed
 
 class CodeqlObject:
-    def __init__(self, number, url, state, rule):
+    def __init__(self, number, url, state, rule, html_url, message, path, tool):
         self.number = number
         self.url = url
         self.state = state
+        self.html_url = html_url
         self.rule = rule
+        self.message = message
+        self.path = path
+        self.tool = tool
 
 response = requests.get(url_endpoint_github, headers=headers_github)
 
@@ -107,7 +114,11 @@ if response.status_code == 200:
             item["number"],
             item["url"],
             item["state"],
-            rule_obj
+            rule_obj,
+            item["html_url"],
+            item["most_recent_instance"]["message"],
+            item["most_recent_instance"]["location"]["path"],
+            item["tool"]["name"]
         )
         codeql_objects.append(codeql_obj)
 
@@ -123,5 +134,15 @@ for item in codeql_objects:
     if item.rule.executed == True:
         if inUseFound == False:
             print("In-Use vulnerabilities found: ")
-        inUseFound = True
-        print(item.number, " | " , item.rule.id)
+            inUseFound = True
+        print(item.number, " | " , item.rule.id, "| " , item.html_url)
+        
+        issueTitle = ("Vulnerability: " + str(item.rule.id) + " | " + str(item.rule.severity) + " | In-use at runtime")
+        issueBody = ("Tool: " + str(item.tool) + "<br>" + str(item.message.text) + "<br>" + str(item.path)  + "<br>" + str(item.html_url) + "<br>" + str(item.url) + ">")
+
+        responseGithubIssue = requests.post(url_endpoint_github_issues, headers=headers_github, data=json.dumps({"title":issueTitle,"body":issueBody}))
+
+        if not responseGithubIssue.status_code == 200:
+            print("Error creating issue:", responseGithubIssue.status_code, responseGithubIssue.content)
+        else:
+            print("Issue created with success")
