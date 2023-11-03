@@ -138,7 +138,7 @@ for item in codeql_objects:
         print(item.number, " | " , item.rule.id, "| " , item.html_url)
         
         issueTitle = ("Vulnerability: " + str(item.rule.id) + " | " + str(item.rule.severity) + " | In-use at runtime")
-        issueBody = ("Image: " + str(docker_image) + "<br><br>Tool: " + str(item.tool) + "<br>Severity: " + str(item.rule.severity) +"<br><br>" + str(item.message) + "<br><br>Path:" + str(item.path)  + "<br><br>" + str(item.html_url))
+        issueBody = ("<b>Image</b>: " + str(docker_image) + "<br><br><b>Tool</b>: " + str(item.tool) + "<br><b>Severity:</b> " + str(item.rule.severity) +"<br><br>" + str(item.message) + "<br><br><b>Path:</b>" + str(item.path)  + "<br><br>" + str(item.html_url))
 
         responseGithubIssue = requests.post(url_endpoint_github_issues, headers=headers_github, data=json.dumps({"title":issueTitle,"body":issueBody}))
 
