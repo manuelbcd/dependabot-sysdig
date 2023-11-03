@@ -116,7 +116,7 @@ if response.status_code == 200:
             item["state"],
             rule_obj,
             item["html_url"],
-            item["most_recent_instance"]["message"],
+            item["most_recent_instance"]["message"]["text"],
             item["most_recent_instance"]["location"]["path"],
             item["tool"]["name"]
         )
@@ -138,7 +138,7 @@ for item in codeql_objects:
         print(item.number, " | " , item.rule.id, "| " , item.html_url)
         
         issueTitle = ("Vulnerability: " + str(item.rule.id) + " | " + str(item.rule.severity) + " | In-use at runtime")
-        issueBody = ("Tool: " + str(item.tool) + "<br>" + str(item.message) + "<br>" + str(item.path)  + "<br>" + str(item.html_url) + "<br>" + str(item.url) + ">")
+        issueBody = ("Tool: " + str(item.tool) + "<br>" + str(item.message) + "<br><br>" + str(item.path)  + "<br>" + str(item.html_url) + "<br>" + str(item.url)
 
         responseGithubIssue = requests.post(url_endpoint_github_issues, headers=headers_github, data=json.dumps({"title":issueTitle,"body":issueBody}))
 
